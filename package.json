@@ -1,0 +1,24 @@
+{
+  "name": "blog-challenge",
+  "version": "1.0.0",
+  "description": "Blog Challenge for Class",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickFoden/blog-challenge.git"
+  },
+  "author": "Nick Foden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NickFoden/blog-challenge/issues"
+  },
+  "homepage": "https://github.com/NickFoden/blog-challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "uuid": "^3.0.1"
+  }
+}
