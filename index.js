@@ -14,7 +14,7 @@ app.get('/blog-challenge', (req, res) => {
 });
 
 app.post('/blog-challenge', jsonParser, (req, res) => {
-  const requiredFields = ['title', 'description', 'author'];
+  const requiredFields = ['title', 'content', 'author'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -31,7 +31,7 @@ app.delete('/blog-challenge/:id', (req, res) => {
 });
 
 app.put('/blog-challenge/:id', jsonParser, (req, res) => {
-  const requiredFields = ['title', 'description', 'author'];
+  const requiredFields = ['title', 'content', 'author'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -50,15 +50,15 @@ app.put('/blog-challenge/:id', jsonParser, (req, res) => {
   console.log(`Updating Blog Post \`${req.params.id}\``);
   const updatedItem = BlogPosts.update({
     id: req.params.id,
-    name: req.body.title,
-    description: req.body.description,
+    title: req.body.title,
+    content: req.body.content,
     author: req.body.author
   });
   res.status(204).json(updatedItem);
 });
 
 
-  const item = BlogPosts.create(req.body.name, req.body.description, req.body.author);
+  const item = BlogPosts.create(req.body.title, req.body.content, req.body.author);
   res.status(201).json(item);
 });
 
