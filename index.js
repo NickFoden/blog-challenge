@@ -6,8 +6,9 @@ const app = express();
 
 const{BlogPosts} = require('./models');
 
-BlogPosts.create('First Post', "Recipes by Tom", "Tom Jones");
-
+BlogPosts.create('First Post', 'Recipes by Tom', 'Tom Jones');
+BlogPosts.create('Second Post', 'Music by Marvin', 'Marvin Gaye');
+BlogPosts.create('Third Post', 'A wizard of earthsea', 'Urusal LeGuin');
 
 app.get('/blog-challenge', (req, res) => {
 	res.json(BlogPosts.get());
