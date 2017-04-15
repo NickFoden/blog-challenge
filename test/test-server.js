@@ -1,7 +1,7 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 
-const {app, closeServer, runServer} = require('../index');
+const {app, closeServer, runServer} = require('../server');
 
 const should = chai.should();
 
@@ -21,7 +21,7 @@ describe('Blog Posts', function(){
 		.then(function(res){
 			res.should.have.status(200);
 			res.should.be.json;
-			res.body.should.be.a('array';
+			res.body.should.be.a('array');
 				res.body.length.should.be.at.least(1);
 				const expectedKeys = ['title', 'content', 'author'];
 				res.body.forEach(function(item){
